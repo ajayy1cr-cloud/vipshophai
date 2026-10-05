@@ -1,294 +1,277 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050002">
 
-  <title>RAVAN REAL VIP</title>
+<title>RAVAN REAL VIP</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
-    }
+html,body{
+  width:100%;
+  min-height:100%;
+}
 
-    body {
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background:
-        radial-gradient(circle at center, #26000b 0%, #090004 45%, #000 100%);
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at 50% 40%,#30000d 0%,#090003 45%,#000 100%);
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
 
-    .container {
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
+.container{
+  width:100%;
+  max-width:400px;
+  text-align:center;
+}
 
-    .card {
-      position: relative;
-      padding: 42px 24px 32px;
-      background: #000;
-      border: 1px solid rgba(255, 23, 68, 0.35);
-      border-radius: 28px;
-      box-shadow:
-        0 0 25px rgba(255, 0, 50, 0.25),
-        0 0 70px rgba(255, 0, 50, 0.12);
-    }
+.card{
+  position:relative;
+  padding:42px 22px 32px;
+  background:#000;
+  border:1px solid rgba(255,23,68,.35);
+  border-radius:28px;
+  box-shadow:
+    0 0 25px rgba(255,0,50,.3),
+    0 0 70px rgba(255,0,50,.12);
+}
 
-    .avatar {
-      width: 145px;
-      height: 145px;
-      margin: 0 auto 30px;
-      padding: 5px;
-      border-radius: 50%;
-      background: linear-gradient(
-        135deg,
-        #ffffff,
-        #ff1744,
-        #85001d,
-        #ff1744,
-        #ffffff
-      );
-      box-shadow:
-        0 0 15px #ff1744,
-        0 0 35px rgba(255, 23, 68, 0.55);
-      animation: rotateGlow 4s linear infinite;
-    }
+.avatar{
+  width:145px;
+  height:145px;
+  margin:0 auto 30px;
+  padding:5px;
+  border-radius:50%;
+  background:conic-gradient(
+    #fff,
+    #ff1744,
+    #8b001e,
+    #ff1744,
+    #fff
+  );
+  box-shadow:
+    0 0 20px #ff1744,
+    0 0 45px rgba(255,23,68,.5);
+  animation:glow 2.5s ease-in-out infinite;
+}
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #000;
-    }
+.avatar img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #000;
+}
 
-    @keyframes rotateGlow {
-      0% {
-        box-shadow:
-          0 0 15px #ff1744,
-          0 0 30px rgba(255, 23, 68, 0.4);
-      }
+@keyframes glow{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:
+      0 0 15px #ff1744,
+      0 0 35px rgba(255,23,68,.4);
+  }
+  50%{
+    transform:scale(1.03);
+    box-shadow:
+      0 0 30px #ff1744,
+      0 0 60px rgba(255,23,68,.7);
+  }
+}
 
-      50% {
-        box-shadow:
-          0 0 25px #ff1744,
-          0 0 55px rgba(255, 23, 68, 0.7);
-      }
+h1{
+  margin-bottom:32px;
+  font-size:27px;
+  line-height:1.3;
+  font-weight:900;
+  color:#fff;
+  text-shadow:
+    0 0 8px rgba(255,255,255,.3),
+    0 0 20px rgba(255,23,68,.7);
+}
 
-      100% {
-        box-shadow:
-          0 0 15px #ff1744,
-          0 0 30px rgba(255, 23, 68, 0.4);
-      }
-    }
+.join-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
 
-    h1 {
-      margin-bottom: 32px;
-      font-size: 27px;
-      line-height: 1.3;
-      font-weight: 800;
-      color: #fff;
-      text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.3),
-        0 0 20px rgba(255, 23, 68, 0.55);
-    }
+  width:100%;
+  min-height:60px;
+  padding:16px 20px;
 
-    .join-button {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+  border-radius:17px;
 
-      width: 100%;
-      min-height: 60px;
-      padding: 16px 20px;
+  background:linear-gradient(
+    110deg,
+    #9d001e,
+    #ff1744,
+    #ff6680,
+    #ff1744,
+    #9d001e
+  );
 
-      border-radius: 17px;
+  background-size:250% 100%;
 
-      background: linear-gradient(
-        110deg,
-        #9d001e,
-        #ff1744,
-        #ff5b78,
-        #ff1744,
-        #9d001e
-      );
+  color:#fff;
+  text-decoration:none;
 
-      background-size: 250% 100%;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1px;
 
-      color: #fff;
-      text-decoration: none;
+  box-shadow:
+    0 0 15px rgba(255,23,68,.7),
+    0 0 40px rgba(255,23,68,.3);
 
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 1px;
+  animation:button 2.5s ease-in-out infinite;
 
-      box-shadow:
-        0 0 15px rgba(255, 23, 68, 0.6),
-        0 0 35px rgba(255, 23, 68, 0.25);
+  transition:.2s ease;
+}
 
-      animation: buttonGlow 2.5s ease-in-out infinite;
+@keyframes button{
+  0%,100%{
+    background-position:0% 50%;
+    box-shadow:
+      0 0 15px rgba(255,23,68,.7),
+      0 0 40px rgba(255,23,68,.3);
+  }
 
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
-    }
+  50%{
+    background-position:100% 50%;
+    box-shadow:
+      0 0 30px rgba(255,23,68,1),
+      0 0 65px rgba(255,23,68,.5);
+  }
+}
 
-    @keyframes buttonGlow {
-      0%,
-      100% {
-        background-position: 0% 50%;
-        box-shadow:
-          0 0 15px rgba(255, 23, 68, 0.6),
-          0 0 35px rgba(255, 23, 68, 0.25);
-      }
+.join-button:hover{
+  transform:scale(1.02);
+}
 
-      50% {
-        background-position: 100% 50%;
-        box-shadow:
-          0 0 25px rgba(255, 23, 68, 0.9),
-          0 0 55px rgba(255, 23, 68, 0.4);
-      }
-    }
+.join-button:active{
+  transform:scale(.96);
+}
 
-    .join-button:hover {
-      transform: translateY(-2px) scale(1.02);
-    }
+.join-button:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:5px;
+}
 
-    .join-button:active {
-      transform: scale(0.97);
-    }
+.telegram{
+  font-size:22px;
+}
 
-    .join-button:focus {
-      outline: none;
-    }
+.arrow{
+  font-size:26px;
+}
 
-    .join-button:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 5px;
-      box-shadow:
-        0 0 0 6px rgba(255, 23, 68, 0.45),
-        0 0 30px rgba(255, 23, 68, 1);
-    }
+footer{
+  margin-top:22px;
+  font-size:10px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.55);
+}
 
-    .telegram {
-      font-size: 22px;
-    }
+footer strong{
+  color:#fff;
+  text-shadow:0 0 10px #ff1744;
+}
 
-    .arrow {
-      font-size: 25px;
-      line-height: 1;
-    }
+.separator{
+  margin:0 7px;
+  color:#ff1744;
+}
 
-    footer {
-      margin-top: 22px;
-      text-align: center;
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.55);
-    }
+@media(max-width:420px){
 
-    footer strong {
-      color: #fff;
-      text-shadow: 0 0 10px #ff1744;
-    }
+  body{
+    padding:15px;
+  }
 
-    .separator {
-      margin: 0 7px;
-      color: #ff1744;
-    }
+  .card{
+    padding:35px 18px 28px;
+  }
 
-    @media (max-width: 420px) {
-      body {
-        padding: 15px;
-      }
+  .avatar{
+    width:130px;
+    height:130px;
+  }
 
-      .card {
-        padding: 35px 18px 28px;
-      }
+  h1{
+    font-size:23px;
+  }
 
-      .avatar {
-        width: 130px;
-        height: 130px;
-      }
+  .join-button{
+    min-height:57px;
+    font-size:15px;
+  }
+}
 
-      h1 {
-        font-size: 23px;
-      }
+@media(prefers-reduced-motion:reduce){
 
-      .join-button {
-        min-height: 57px;
-        font-size: 15px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card">
+  <div class="card">
 
-      <div class="avatar">
-        <img
-          src="https://iili.io/n1JgNG2.jpg"
-          alt="RAVAN REAL VIP"
-        >
-      </div>
-
-      <h1>𝐑𝐀𝐕𝐀𝐍 𝐑𝐄𝐀𝐋 𝐕𝐈𝐏 👑</h1>
-
-      <a
-        class="join-button"
-        href="https://t.me/+qrAXOaapgJQ0ZThl"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Join Channel"
+    <div class="avatar">
+      <img
+        src="https://iili.io/n1JgNG2.jpg"
+        alt="RAVAN REAL VIP"
       >
-        <span class="telegram">✈</span>
-        <span>JOIN CHANNEL</span>
-        <span class="arrow">›</span>
-      </a>
-
     </div>
 
-    <footer>
-      AD MANAGEMENT
-      <span class="separator">|</span>
-      <strong>MARK</strong>
-    </footer>
+    <h1>
+      𝐑𝐀𝐕𝐀𝐍 𝐑𝐄𝐀𝐋 𝐕𝐈𝐏 👑
+    </h1>
+
+    <a
+      class="join-button"
+      href="https://t.me/+qrAXOaapgJQ0ZThl"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Join Channel"
+    >
+      <span class="telegram">✈</span>
+      <span>JOIN CHANNEL</span>
+      <span class="arrow">›</span>
+    </a>
 
   </div>
 
+  <footer>
+    AD MANAGEMENT
+    <span class="separator">|</span>
+    <strong>MARK</strong>
+  </footer>
+
+</div>
+
 </body>
 </html>
-```
