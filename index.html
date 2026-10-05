@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050002">
 
-<title>RAVAN REAL VIP</title>
+<title>RAVAN REAL VIP 👑</title>
 
 <style>
 *{
@@ -23,87 +24,167 @@ body{
   min-height:100vh;
   min-height:100dvh;
   display:flex;
-  justify-content:center;
   align-items:center;
-  padding:20px;
+  justify-content:center;
+  padding:18px;
   background:
-    radial-gradient(circle at 50% 40%,#30000d 0%,#090003 45%,#000 100%);
+    radial-gradient(circle at 50% 35%,#35000d 0%,#0b0004 42%,#000 100%);
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
 
-.container{
-  width:100%;
-  max-width:400px;
-  text-align:center;
+/* BACKGROUND GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(
+    circle,
+    rgba(255,0,55,.18),
+    transparent 68%
+  );
+  pointer-events:none;
 }
 
+/* MAIN CARD */
 .card{
   position:relative;
-  padding:42px 22px 32px;
-  background:#000;
-  border:1px solid rgba(255,23,68,.35);
-  border-radius:28px;
+  z-index:2;
+  width:100%;
+  max-width:410px;
+  padding:40px 22px 28px;
+  text-align:center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(25,0,7,.98),
+      rgba(3,0,2,.99)
+    );
+  border:1px solid rgba(255,23,68,.4);
+  border-radius:30px;
+
   box-shadow:
-    0 0 25px rgba(255,0,50,.3),
-    0 0 70px rgba(255,0,50,.12);
+    0 0 20px rgba(255,0,50,.25),
+    0 0 70px rgba(255,0,50,.12),
+    0 30px 80px rgba(0,0,0,.9);
 }
 
+/* AVATAR */
 .avatar{
-  width:145px;
-  height:145px;
+  position:relative;
+  width:150px;
+  height:150px;
   margin:0 auto 30px;
-  padding:5px;
+  padding:6px;
   border-radius:50%;
+
   background:conic-gradient(
     #fff,
     #ff1744,
-    #8b001e,
+    #730015,
     #ff1744,
     #fff
   );
+
   box-shadow:
     0 0 20px #ff1744,
-    0 0 45px rgba(255,23,68,.5);
-  animation:glow 2.5s ease-in-out infinite;
+    0 0 45px rgba(255,23,68,.65);
+
+  animation:avatarGlow 2.5s ease-in-out infinite;
+}
+
+.avatar::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border:1px dashed rgba(255,23,68,.7);
+  border-radius:50%;
+  animation:spin 8s linear infinite;
 }
 
 .avatar img{
+  position:relative;
   width:100%;
   height:100%;
   display:block;
   object-fit:cover;
   border-radius:50%;
-  border:4px solid #000;
+  border:5px solid #000;
 }
 
-@keyframes glow{
+@keyframes avatarGlow{
   0%,100%{
     transform:scale(1);
     box-shadow:
-      0 0 15px #ff1744,
-      0 0 35px rgba(255,23,68,.4);
+      0 0 18px #ff1744,
+      0 0 38px rgba(255,23,68,.45);
   }
+
   50%{
-    transform:scale(1.03);
+    transform:scale(1.035);
     box-shadow:
       0 0 30px #ff1744,
-      0 0 60px rgba(255,23,68,.7);
+      0 0 65px rgba(255,23,68,.75);
   }
 }
 
-h1{
-  margin-bottom:32px;
-  font-size:27px;
-  line-height:1.3;
-  font-weight:900;
-  color:#fff;
-  text-shadow:
-    0 0 8px rgba(255,255,255,.3),
-    0 0 20px rgba(255,23,68,.7);
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
 }
 
-.join-button{
+/* TITLE */
+h1{
+  margin-bottom:30px;
+  font-size:28px;
+  line-height:1.25;
+  font-weight:900;
+  letter-spacing:.3px;
+
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ff1744,
+    #fff,
+    #ff1744,
+    #fff
+  );
+
+  background-size:250% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  animation:titleShine 4s linear infinite;
+}
+
+@keyframes titleShine{
+  from{
+    background-position:100%;
+  }
+
+  to{
+    background-position:-150%;
+  }
+}
+
+/* SMALL TEXT */
+.subtitle{
+  margin-top:-18px;
+  margin-bottom:25px;
+  font-size:11px;
+  line-height:1.6;
+  color:rgba(255,255,255,.65);
+}
+
+/* BUTTON */
+.join{
   position:relative;
   display:flex;
   align-items:center;
@@ -111,18 +192,18 @@ h1{
   gap:12px;
 
   width:100%;
-  min-height:60px;
-  padding:16px 20px;
+  min-height:62px;
+  padding:17px 20px;
 
-  border-radius:17px;
+  border-radius:18px;
 
   background:linear-gradient(
     110deg,
-    #9d001e,
+    #8d001c,
     #ff1744,
-    #ff6680,
+    #ff6380,
     #ff1744,
-    #9d001e
+    #8d001c
   );
 
   background-size:250% 100%;
@@ -135,20 +216,28 @@ h1{
   letter-spacing:1px;
 
   box-shadow:
-    0 0 15px rgba(255,23,68,.7),
-    0 0 40px rgba(255,23,68,.3);
+    0 0 18px rgba(255,23,68,.7),
+    0 0 45px rgba(255,23,68,.3);
 
-  animation:button 2.5s ease-in-out infinite;
+  animation:buttonGlow 2.5s ease-in-out infinite;
 
-  transition:.2s ease;
+  transition:transform .2s ease;
 }
 
-@keyframes button{
+.join:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.join:active{
+  transform:scale(.96);
+}
+
+@keyframes buttonGlow{
   0%,100%{
     background-position:0% 50%;
     box-shadow:
-      0 0 15px rgba(255,23,68,.7),
-      0 0 40px rgba(255,23,68,.3);
+      0 0 18px rgba(255,23,68,.7),
+      0 0 40px rgba(255,23,68,.25);
   }
 
   50%{
@@ -159,69 +248,70 @@ h1{
   }
 }
 
-.join-button:hover{
-  transform:scale(1.02);
-}
-
-.join-button:active{
-  transform:scale(.96);
-}
-
-.join-button:focus-visible{
-  outline:3px solid #fff;
-  outline-offset:5px;
-}
-
 .telegram{
   font-size:22px;
 }
 
 .arrow{
-  font-size:26px;
+  font-size:27px;
+  line-height:1;
 }
 
+/* FOOTER */
 footer{
-  margin-top:22px;
+  margin-top:23px;
   font-size:10px;
   letter-spacing:2px;
-  color:rgba(255,255,255,.55);
+  color:rgba(255,255,255,.5);
 }
 
 footer strong{
   color:#fff;
-  text-shadow:0 0 10px #ff1744;
+  text-shadow:
+    0 0 8px #ff1744,
+    0 0 15px rgba(255,23,68,.7);
 }
 
-.separator{
+.sep{
   margin:0 7px;
   color:#ff1744;
 }
 
+/* MOBILE */
 @media(max-width:420px){
 
   body{
-    padding:15px;
+    padding:14px;
   }
 
   .card{
-    padding:35px 18px 28px;
+    padding:34px 17px 26px;
+    border-radius:25px;
   }
 
   .avatar{
-    width:130px;
-    height:130px;
+    width:132px;
+    height:132px;
+    margin-bottom:27px;
   }
 
   h1{
-    font-size:23px;
+    font-size:24px;
   }
 
-  .join-button{
-    min-height:57px;
+  .join{
+    min-height:58px;
     font-size:15px;
   }
 }
 
+/* ACCESSIBILITY */
+.join:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:5px;
+}
+
+/* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
 
   *,
@@ -236,42 +326,49 @@ footer strong{
 
 <body>
 
-<div class="container">
+<main class="card">
 
-  <div class="card">
-
-    <div class="avatar">
-      <img
-        src="https://iili.io/n1JgNG2.jpg"
-        alt="RAVAN REAL VIP"
-      >
-    </div>
-
-    <h1>
-      𝐑𝐀𝐕𝐀𝐍 𝐑𝐄𝐀𝐋 𝐕𝐈𝐏 👑
-    </h1>
-
-    <a
-      class="join-button"
-      href="https://t.me/+qrAXOaapgJQ0ZThl"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Join Channel"
+  <!-- PROFILE IMAGE -->
+  <div class="avatar">
+    <img
+      src="https://iili.io/n1JgNG2.jpg"
+      alt="RAVAN REAL VIP"
+      draggable="false"
     >
-      <span class="telegram">✈</span>
-      <span>JOIN CHANNEL</span>
-      <span class="arrow">›</span>
-    </a>
-
   </div>
 
+  <!-- TITLE -->
+  <h1>
+    𝐑𝐀𝐕𝐀𝐍 𝐑𝐄𝐀𝐋 𝐕𝐈𝐏 👑
+  </h1>
+
+  <div class="subtitle">
+    Exclusive VIP Community
+    <br>
+    Join Our Official Telegram Channel
+  </div>
+
+  <!-- TELEGRAM BUTTON -->
+  <a
+    class="join"
+    href="https://t.me/+qrAXOaapgJQ0ZThl"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Join Ravan Real VIP Telegram Channel"
+  >
+    <span class="telegram">✈</span>
+    <span>JOIN CHANNEL</span>
+    <span class="arrow">›</span>
+  </a>
+
+  <!-- FOOTER -->
   <footer>
     AD MANAGEMENT
-    <span class="separator">|</span>
+    <span class="sep">|</span>
     <strong>MARK</strong>
   </footer>
 
-</div>
+</main>
 
 </body>
 </html>
