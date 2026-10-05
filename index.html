@@ -1,0 +1,461 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050002">
+<title>RAVAN REAL VIP</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050002;
+  --red:#ff1744;
+  --red2:#ff5470;
+  --deep:#a3001f;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+  width:100%;
+  min-height:100%;
+  background:#050002;
+  color:#fff;
+  font-family:Unbounded,Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(255,20,65,.18),transparent 45%),
+    radial-gradient(circle at 50% 0%,#25020b 0%,#080103 50%,#020001 100%);
+}
+
+.bg:after{
+  content:"";
+  position:absolute;
+  width:80vmin;
+  height:80vmin;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,20,65,.25),transparent 65%);
+  animation:glow 5s ease-in-out infinite;
+}
+
+@keyframes glow{
+  50%{
+    transform:translate(-50%,-50%) scale(.85);
+    opacity:.5;
+  }
+}
+
+/* CARD */
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:390px;
+  padding:42px 24px 30px;
+  border-radius:30px;
+  text-align:center;
+  background:#000;
+  border:1px solid rgba(255,31,69,.18);
+  box-shadow:
+    0 0 35px rgba(255,20,65,.25),
+    0 35px 80px rgba(0,0,0,.9);
+  animation:enter .8s ease both,float 6s 1s ease-in-out infinite;
+}
+
+@keyframes enter{
+  from{
+    opacity:0;
+    transform:translateY(30px) scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-7px);
+  }
+}
+
+/* ANIMATED BORDER */
+.card:before,
+.btn:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--red),
+    #fff,
+    var(--red),
+    transparent
+  );
+  background-size:300% 100%;
+  animation:borderMove 3s linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+@keyframes borderMove{
+  to{
+    background-position:300% 0;
+  }
+}
+
+/* AVATAR */
+.avatar{
+  position:relative;
+  width:150px;
+  height:150px;
+  margin:0 auto 28px;
+}
+
+.avatar:before{
+  content:"";
+  position:absolute;
+  inset:-25px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(255,20,65,.45),
+    transparent 68%
+  );
+  animation:pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(.85);
+    opacity:.5;
+  }
+}
+
+.avatar .ring{
+  position:absolute;
+  inset:-7px;
+  border-radius:50%;
+  background:conic-gradient(
+    #fff,
+    var(--red),
+    transparent 40%,
+    var(--deep),
+    #fff
+  );
+  animation:spin 3s linear infinite;
+}
+
+.avatar .ring2{
+  position:absolute;
+  inset:-15px;
+  border-radius:50%;
+  border:1px dashed rgba(255,84,112,.5);
+  animation:spin 12s linear infinite reverse;
+}
+
+.avatar img{
+  position:relative;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid #000;
+  display:block;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* TITLE */
+h1{
+  position:relative;
+  font-size:clamp(24px,7vw,33px);
+  line-height:1.2;
+  font-weight:800;
+  margin-bottom:34px;
+  letter-spacing:-.5px;
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #fff,
+    var(--red2),
+    #fff,
+    #fff
+  );
+  background-size:250% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:textshine 4s linear infinite;
+}
+
+@keyframes textshine{
+  from{
+    background-position:100%;
+  }
+  to{
+    background-position:-150%;
+  }
+}
+
+/* BUTTON */
+.cta{
+  position:relative;
+}
+
+.btn{
+  position:relative;
+  display:block;
+  width:100%;
+  padding:4px;
+  border-radius:20px;
+  background:#180006;
+  color:#fff;
+  text-decoration:none;
+  overflow:visible;
+  transition:.15s;
+  animation:beat 2.3s ease-in-out infinite;
+}
+
+@keyframes beat{
+  0%,100%{
+    transform:scale(1);
+  }
+  8%{
+    transform:scale(1.035);
+  }
+  16%{
+    transform:scale(1);
+  }
+}
+
+.face{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:18px 20px;
+  border-radius:16px;
+  background:linear-gradient(
+    110deg,
+    #b80025,
+    #ff1744,
+    #ff6680,
+    #ff1744,
+    #b80025
+  );
+  background-size:220% 100%;
+  animation:flow 3s ease-in-out infinite;
+  font-size:15px;
+  font-weight:600;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.5),
+    inset 0 -3px rgba(80,0,15,.5);
+}
+
+@keyframes flow{
+  50%{
+    background-position:100%;
+  }
+}
+
+.face:after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  bottom:-20%;
+  left:-70%;
+  width:35%;
+  background:linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.75),
+    transparent
+  );
+  transform:skewX(-20deg);
+  animation:shine 2.8s infinite;
+}
+
+@keyframes shine{
+  0%{
+    left:-70%;
+  }
+  40%,100%{
+    left:140%;
+  }
+}
+
+.icon,
+.label,
+.arrow{
+  position:relative;
+  z-index:2;
+}
+
+.icon{
+  font-size:21px;
+}
+
+.arrow{
+  font-size:25px;
+  line-height:1;
+  animation:nudge 1.4s ease-in-out infinite;
+}
+
+@keyframes nudge{
+  50%{
+    transform:translateX(5px);
+  }
+}
+
+.btn:active{
+  transform:scale(.96);
+}
+
+/* FOOTER */
+.foot{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  margin-top:25px;
+}
+
+.by{
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:rgba(255,255,255,.55);
+}
+
+.by b{
+  color:#fff;
+  text-shadow:0 0 12px rgba(255,31,69,.7);
+}
+
+.sep{
+  color:var(--red);
+  margin:0 7px;
+}
+
+/* MOBILE */
+@media(max-width:420px){
+  .card{
+    padding:36px 18px 25px;
+  }
+
+  .avatar{
+    width:136px;
+    height:136px;
+  }
+
+  h1{
+    font-size:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<main class="card">
+
+  <div class="avatar">
+
+    <span class="ring2"></span>
+    <span class="ring"></span>
+
+    <!-- YOUR IMAGE -->
+    <img
+      src="https://iili.io/n1JgNG2.jpg"
+      alt="RAVAN REAL VIP"
+      draggable="false"
+    >
+
+  </div>
+
+  <h1>
+    𝐑𝐀𝐕𝐀𝐍 𝐑𝐄𝐀𝐋 𝐕𝐈𝐏 👑
+  </h1>
+
+  <div class="cta">
+
+    <a
+      class="btn"
+      href="https://t.me/+qrAXOaapgJQ0ZThl"
+    >
+
+      <span class="face">
+
+        <span class="icon">✈</span>
+
+        <span class="label">
+          JOIN CHANNEL
+        </span>
+
+        <span class="arrow">›</span>
+
+      </span>
+
+    </a>
+
+  </div>
+
+</main>
+
+<footer class="foot">
+
+  <div class="by">
+    AD MANAGEMENT
+    <span class="sep">|</span>
+    <b>MARK</b>
+  </div>
+
+</footer>
+
+</body>
+</html>
+```
